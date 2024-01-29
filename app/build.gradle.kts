@@ -50,14 +50,10 @@ koverReport {
     androidReports("debug") {}
 }
 
-tasks.withType(Test::class.java).configureEach {
-    finalizedBy(tasks.named("koverXmlReport"))
-}
-
 dependencies {
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
-    implementation(libs.robolectric)
+    testImplementation(libs.robolectric)
     testImplementation(libs.junit)
 }
